@@ -1,0 +1,3 @@
+[submodule "cuppertino"]
+	path = cuppertino
+	url = https://github.com/MrWillCom/hexo-theme-cupertino.git
