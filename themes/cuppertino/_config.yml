@@ -18,7 +18,7 @@ nav:
     # these items will display as a link
     # Archives: /archives
     # Friends: /friends
-    Projects: /projects
+    # Projects: /projects
     About: /about
     # these will be automatically be an icon
     # GitHub: https://github.com/MrWillCom
@@ -33,7 +33,7 @@ footer:
     Blog: /
     # Archives: /archives
     # Friends: /friends
-    Projects: /projects
+    # Projects: /projects
     About: /about
     # RSS: /atom.xml
   # also the title

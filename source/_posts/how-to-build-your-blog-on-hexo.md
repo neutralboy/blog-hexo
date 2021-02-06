@@ -1,6 +1,8 @@
 ---
 title: How to build your blog on Hexo
-tags: Hexo, JS, Static site, Headless CMS, Blogging
+keywords: Hexo, JS, Static site, Headless CMS, Blogging
+description: Hexo is a ridiculosly simple blogging frameworlk for developers, build your site in Hexo.
+image: https://res.cloudinary.com/poorna/image/upload/c_scale,w_300/v1612633600/my-blog/undraw_blogging_vpvv.png
 ---
 
  > **What is Hexo?**
@@ -106,4 +108,4 @@ git commit -m "deploy post"
 ```
 
 
-> Follow the next tutorial on how to deploy the blog on AWS S3 + Cloudfront
+> Follow the next tutorial on [how to deploy the blog on AWS S3 + Cloudfront](/2021/02/06/deploy-static-site-on-aws/)
