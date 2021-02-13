@@ -9,8 +9,8 @@
   <meta name="author" content="Poornachandra">
   
   
-  <meta property="og:title" content="How to deploy your static site on AWS S3 + Cloudfront in 2021" />
-  <title>How to deploy your static site on AWS S3 + Cloudfront in 2021 - Poorna.</title>
+  <meta property="og:title" content="Deploying Next.js on Cloudfront" />
+  <title>Deploying Next.js on Cloudfront - Poorna.</title>
   
     <link rel="shortcut icon" href="/favicon.png">
   
@@ -53,14 +53,7 @@
   
 
   
-      <meta name="description" content="Deploy your static site on AWS and use the complete advantage of cutting edge technology.">
-      <meta property="og:description" content="Deploy your static site on AWS and use the complete advantage of cutting edge technology." />
   
-  
-    <meta name="keywords" content=" AWS, S3, CloudFront, Headless CMS, Static Site, JAM Stack ">
-  
-  
-    <meta name="og:image" content=" https://res.cloudinary.com/poorna/image/upload/c_scale,w_300/v1612633710/my-blog/undraw_Around_the_world_re_n353.png ">
   
 
 
@@ -99,50 +92,52 @@
             
             
             
-            <span>6,</span>
+            <span>13,</span>
             <span>2021</span>
         </div>
         
 
-        <h2 class="title">How to deploy your static site on AWS S3 + Cloudfront in 2021</h2>
+        <h2 class="title">Deploying Next.js on Cloudfront</h2>
     </div>
 
     <div class="divider"></div>
 
     <div class="content">
-        <blockquote>
-<p>This guide is for advanced users with intricate knowledge of AWS and its services. If you’re new to static sites you can try out <a target="_blank" rel="noopener" href="https://www.netlify.com/">Netlify</a> they’re a super simple way to deploy static sites. If you’re asking why do it at all, its for bonus cool points. </p>
-</blockquote>
-<h1 id="How-do-we-go-about-it"><a href="#How-do-we-go-about-it" class="headerlink" title="How do we go about it ?"></a>How do we go about it ?</h1><p>Here are the steps of how to deploy it:</p>
-<ol>
-<li>Git your code</li>
-<li>Using CodePipeline Trigger to add code to S3</li>
-<li>Serve the contents of S3 over Cloudfront</li>
+        <h1 id="Why-deploy-Next-js-on-Cloudfront"><a href="#Why-deploy-Next-js-on-Cloudfront" class="headerlink" title="Why deploy Next.js on Cloudfront ?"></a>Why deploy Next.js on Cloudfront ?</h1><p>You can use services such as Netlify or Vercel to generate and deploy you static site. These services leverage AWS architecture or equivalents such as GCP or Azure to deploy your site on the CDN. </p>
+<p><strong>Netlify Free tier</strong>: Netlify provides 300 free build minutes per month.</p>
+<p><strong>AWS CloudBuild Free tier</strong>: AWS CodeBuild provides 100 free build minutes. So, 300 minutes will cost you 300-100(free minutes) = 200. 200 min × $0.005/min = $1<br>    Other things to factor in<br>        1. S3: 0.025$/GB - One static site will typically be around 100MB<br>        2. DNS: 0.5$ per domain (Avoidable if you buy your domain on GoDaddy and use their built in DNS service.)<br>        3. CodePipeline: 0.5$ per code pipeline<br>        4. Free tier of AWS CloudFront. (Free tier for a year, after which it adds upto less than 5$ a month.)<br>    To deploy site per month it costs - $2.025</p>
+<p>The bet on AWS pays off if you have high loads and greater than 1 concurrent builds.<br>Netlify allows 3 concurrent builds on the $19 plan. On AWS the same costs around $2.025 + 2 more Code pipelines at 0.5$ each. Total at 3.025$</p>
+<p>The only disadvantage of using AWS is the need for intricate techinical knowledge on how to deploy your code. Netlify uses your <code>package.json</code> data commands to build and configure your site.</p>
+<hr>
+<h1 id="Moving-Parts"><a href="#Moving-Parts" class="headerlink" title="Moving Parts"></a>Moving Parts</h1><ol>
+<li>Git</li>
+<li>AWS CodePipeline - to configure triggers</li>
+<li>AWS CodeBuild - to build and package our code</li>
+<li>AWS S3 - to store the build artifacts</li>
+<li>AWS Cloudfront - to distrubute our site</li>
 </ol>
 <hr>
-<p>Feel free to skip ahead to anything you’ve already done.</p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>You can use any of the following services to maintain your code</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://bitbucket.org/product/">Bitbucket</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/">Github</a></li>
-<li><a target="_blank" rel="noopener" href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a></li>
-</ul>
-<p>Once you have all your code commited and ready, move on to the next step.</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Setup your code on git and commit all of it.<br>Use any of Github, Butbucket or Gitlab to maintain your code.</p>
 <hr>
-<h1 id="Using-CodePipeline-Trigger"><a href="#Using-CodePipeline-Trigger" class="headerlink" title="Using CodePipeline Trigger"></a>Using CodePipeline Trigger</h1><blockquote>
+<h2 id="Setup-CodePipeline"><a href="#Setup-CodePipeline" class="headerlink" title="Setup CodePipeline"></a>Setup CodePipeline</h2><blockquote>
 <p>AWS CodePipeline is a tool that looks for commits and pulls made to a git repository and triggers an action on the code. Action may be postprocessing of data, building container images, exporting static files and so on.</p>
 </blockquote>
 <ol>
+<li><h3 id="Add-build-command-to-your-NextJS-project"><a href="#Add-build-command-to-your-NextJS-project" class="headerlink" title="Add build command to your NextJS project"></a>Add build command to your NextJS project</h3><p> Add the build command to <code>package.json</code> file of your NextJS project. This command will help us build and export the project. <code>next export</code> generates a pre-rendered HTML export into a folder named <code>out</code>.</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">build: next build &amp;&amp; next export</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
 <li><h3 id="Go-to-the-CodePipeline-section-and-use-the-Create-pipeline-button"><a href="#Go-to-the-CodePipeline-section-and-use-the-Create-pipeline-button" class="headerlink" title="Go to the CodePipeline section and use the Create pipeline button."></a>Go to the CodePipeline section and use the <code>Create pipeline</code> button.</h3><p> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612627201/my-blog/Screenshot_2021-02-06_CodePipeline_-_AWS_Developer_Tools.png" alt="Create Pipeline"></p>
 </li>
 <li><h3 id="Name-your-pipeline-and-use-the-New-Service-Role-it-should-give-you-enough-permissions-to-make-it-work"><a href="#Name-your-pipeline-and-use-the-New-Service-Role-it-should-give-you-enough-permissions-to-make-it-work" class="headerlink" title="Name your pipeline and use the New Service Role, it should give you enough permissions to make it work."></a>Name your pipeline and use the New Service Role, it should give you enough permissions to make it work.</h3><p> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612627422/my-blog/Screenshot_2021-02-06_CodePipeline_-_AWS_Developer_Tools_2.png" alt="Name and create role"><br> Click on next</p>
 </li>
 <li><h3 id="Now-choose-the-source-of-code"><a href="#Now-choose-the-source-of-code" class="headerlink" title="Now choose the source of code"></a>Now choose the source of code</h3><p> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612627533/my-blog/Screenshot_2021-02-06_CodePipeline_-_AWS_Developer_Tools_3.png" alt="Source of code"><br> One you choose your source, AWS will ask you to connect your repo to the pipeline. Provide all necessary permissions.<br> Click Next.</p>
 </li>
-<li><h3 id="Skip-the-buid-Stage"><a href="#Skip-the-buid-Stage" class="headerlink" title="Skip the buid Stage"></a>Skip the buid Stage</h3><p> Button is located at the bottom of the page<br> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612627764/my-blog/Screenshot_2021-02-06_CodePipeline_-_AWS_Developer_Tools_4.png" alt="Skip the build stage"></p>
-<blockquote>
-<p>Skipping build stage implies that you already have deployable <code>index.html</code> in your git repo. If you do not consider using a build stage.</p>
+<li><h3 id="Configuring-the-build-stage"><a href="#Configuring-the-build-stage" class="headerlink" title="Configuring the build stage"></a>Configuring the build stage</h3><p> Use the Create Project button<br> <img src="https://res.cloudinary.com/poorna/image/upload/v1613212748/my-blog/Screenshot_2021-02-13_CodePipeline_-_AWS_Developer_Tools.png" alt="Create CodeBuild Project"></p>
+</li>
+<li><h3 id="Configuring-AWS-CodeBuild-Environment"><a href="#Configuring-AWS-CodeBuild-Environment" class="headerlink" title="Configuring AWS CodeBuild Environment"></a>Configuring AWS CodeBuild Environment</h3><blockquote>
+<p>Image registry: Other registry<br>Custom Docker image registry URL: registry.hub.docker.com/library/node:alpine<br>Previleged: True<br> <img src="https://res.cloudinary.com/poorna/image/upload/v1613212593/my-blog/Screenshot_2021-02-13_CodeBuild_-_AWS_Developer_Tools.png" alt="Configure AWS Codebuild Environment"></p>
 </blockquote>
+</li>
+<li><h3 id="Configure-AWS-Codebuild-Command"><a href="#Configure-AWS-Codebuild-Command" class="headerlink" title="Configure AWS Codebuild Command"></a>Configure AWS Codebuild Command</h3><p> Choose the Insert custom build command option and enter the <code>npm run build</code> .<br> <img src="https://res.cloudinary.com/poorna/image/upload/v1613213066/my-blog/Screenshot_2021-02-13_CodeBuild_-_AWS_Developer_Tools_1.png" alt="Configure AWS Codebuild Environment"></p>
 </li>
 <li><h3 id="Choose-AWS-S3-as-your-deploy-stage"><a href="#Choose-AWS-S3-as-your-deploy-stage" class="headerlink" title="Choose AWS S3 as your deploy stage"></a>Choose AWS S3 as your deploy stage</h3><p> <img src="https://res.cloudinary.com/poorna/image/upload/v1612627954/my-blog/Screenshot_2021-02-06_CodePipeline_-_AWS_Developer_Tools_5.png" alt="AWS S3 as deploy stage"><br> Choose any of your S3 buckets</p>
 <blockquote>
@@ -153,31 +148,6 @@
 <p> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612628312/my-blog/Screenshot_2021-02-06_CodePipeline_-_AWS_Developer_Tools_7.png" alt="Successful Trigger"></p>
 </li>
 </ol>
-<hr>
-<h1 id="Setting-up-CloudFront"><a href="#Setting-up-CloudFront" class="headerlink" title="Setting up CloudFront"></a>Setting up CloudFront</h1><blockquote>
-<p>Cloudfront is AWS CDN service that can serve objects from globally cached edge nodes. It can be used to serve images, css, html, php and all static assets. Video Livestreaming is also possible.</p>
-</blockquote>
-<ol>
-<li><h3 id="Create-a-new-distrubution"><a href="#Create-a-new-distrubution" class="headerlink" title="Create a new distrubution"></a>Create a new distrubution</h3> Navigate to the AWS Cloudfront service and create a new distrubution.<br> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612628717/my-blog/Screenshot_2021-02-06_AWS_CloudFront_Management_Console.png" alt="Create a new distrubution"></li>
-<li><h3 id="Choose-the-S3-bucket-you-want-to-serve-from"><a href="#Choose-the-S3-bucket-you-want-to-serve-from" class="headerlink" title="Choose the S3 bucket you want to serve from."></a>Choose the S3 bucket you want to serve from.</h3> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612631494/my-blog/Screenshot_2021-02-06_AWS_CloudFront_Management_Console_1.png" alt="Choose S3 bucket"><blockquote>
-<p>Use the <em>Origin Path</em> option to make sure you serve the right files. Here’s an example of what it looks like:<br> <img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612631494/my-blog/Screenshot_2021-02-06_AWS_CloudFront_Management_Console_1.png" alt="Origin Path option"></p>
-</blockquote>
-</li>
-<li><h3 id="Configure-a-few-more-options"><a href="#Configure-a-few-more-options" class="headerlink" title="Configure a few more options"></a>Configure a few more options</h3> Leave most options to their defaults, here are a few I recommend changing:<ul>
-<li><h4 id="Compress-Objects-Automatically-YES"><a href="#Compress-Objects-Automatically-YES" class="headerlink" title="Compress Objects Automatically: YES"></a>Compress Objects Automatically: YES</h4></li>
-<li><h4 id="Alternate-Domain-Names-lt-custom-domain-gt"><a href="#Alternate-Domain-Names-lt-custom-domain-gt" class="headerlink" title="Alternate Domain Names: &lt; custom domain &gt;"></a>Alternate Domain Names: &lt; custom domain &gt;</h4><blockquote>
-<p>If you want a custom domain, AWS automatically provisions a SSL certificate.</p>
-</blockquote>
-</li>
-<li><h4 id="Custom-SSL-Certificate"><a href="#Custom-SSL-Certificate" class="headerlink" title="Custom SSL Certificate"></a>Custom SSL Certificate</h4></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="Click-Deploy-and-you-are-done"><a href="#Click-Deploy-and-you-are-done" class="headerlink" title="Click Deploy and you are done."></a>Click Deploy and you are done.</h2><p>Now you must have a cloudfront domain deployed at your custom domain </p>
-<p>Here’s how the Cloufront Distrubution looks once its done!<br><img src="https://res.cloudinary.com/poorna/image/upload/c_scale,w_900/v1612632096/my-blog/Screenshot_2021-02-06_AWS_CloudFront_Management_Console_3.png" alt="Completed"></p>
-<hr>
-<p><img src="https://res.cloudinary.com/poorna/image/upload/v1612632204/my-blog/tenor.gif" alt="Celebration"></p>
 
     </div>
 

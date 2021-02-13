@@ -68,7 +68,7 @@ Once you have all your code commited and ready, move on to the next step.
     Leave most options to their defaults, here are a few I recommend changing:
     * #### Compress Objects Automatically: YES
     * #### Alternate Domain Names: < custom domain >
-        >If you want a custom domain, AWS automatically provisions a SSL certificate and assigns you a cloudfront domain.
+        >If you want a custom domain, AWS automatically provisions a SSL certificate.
     * #### Custom SSL Certificate
 
 ----
