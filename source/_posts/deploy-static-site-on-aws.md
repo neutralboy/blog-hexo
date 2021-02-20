@@ -4,6 +4,7 @@ date: 2021-02-06 16:27:07
 keywords: AWS, S3, CloudFront, Headless CMS, Static Site, JAM Stack
 description: Deploy your static site on AWS and use the complete advantage of cutting edge technology.
 image: https://res.cloudinary.com/poorna/image/upload/c_scale,w_300/v1612633710/my-blog/undraw_Around_the_world_re_n353.png
+level: Intermediate
 ---
 > This guide is for advanced users with intricate knowledge of AWS and its services. If you're new to static sites you can try out [Netlify](https://www.netlify.com/) they're a super simple way to deploy static sites. If you're asking why do it at all, its for bonus cool points. 
 

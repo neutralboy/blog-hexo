@@ -3,6 +3,7 @@ title: How to build your blog on Hexo
 keywords: Hexo, JS, Static site, Headless CMS, Blogging
 description: Hexo is a ridiculosly simple blogging frameworlk for developers, build your site in Hexo.
 image: https://res.cloudinary.com/poorna/image/upload/c_scale,w_300/v1612633600/my-blog/undraw_blogging_vpvv.png
+level: Easy
 ---
 
  > **What is Hexo?**

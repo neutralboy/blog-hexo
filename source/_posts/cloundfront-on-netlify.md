@@ -2,6 +2,7 @@
 title: Deploying Next.js on Cloudfront
 date: 2021-02-13 14:24:59
 tags: Cloudfront, AWS, Next.js, CMS, Devops, Cloud Deployment
+level: Hard
 ---
 
 # Why deploy Next.js on Cloudfront ?
