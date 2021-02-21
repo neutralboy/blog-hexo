@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://poorna.dev/2021/02/21/AWS-Lightsail-Wordpress-for-Absolute-Beginners/</loc>
+    
+    <lastmod>2021-02-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/2021/02/20/WooCommerce-Wordpress-one-page-checkout/</loc>
+    
+    <lastmod>2021-02-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/2021/02/13/cloundfront-on-netlify/</loc>
+    
+    <lastmod>2021-02-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/2021/02/06/deploy-static-site-on-aws/</loc>
+    
+    <lastmod>2021-02-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/2021/02/05/how-to-build-your-blog-on-hexo/</loc>
+    
+    <lastmod>2021-02-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/about/index.html</loc>
+    
+    <lastmod>2021-02-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/404/index.html</loc>
+    
+    <lastmod>2021-02-06</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://poorna.dev/</loc>
+    <lastmod>2021-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://poorna.dev/tags/Cloudfront-AWS-Next-js-CMS-Devops-Cloud-Deployment/</loc>
+    <lastmod>2021-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+</urlset>
