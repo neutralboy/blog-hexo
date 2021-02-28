@@ -34,7 +34,7 @@
   %>
   
   
-  <% if (title) %>
+  <% if (title){ %>
     <meta property="og:title" content="<%= title %><%= config.title %>" />
   <% }else{ %>
     <meta property="og:title" content="<%= config.title %>" />
