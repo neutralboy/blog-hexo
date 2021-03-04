@@ -6,4 +6,5 @@
     background-color: #f38020;
     padding: 5px;
     text-transform: capitalize;
+    font-family: var(--primary-font);
 }

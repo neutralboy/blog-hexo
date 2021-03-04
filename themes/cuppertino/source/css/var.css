@@ -17,7 +17,8 @@
     --card-title: #cfcfda;
     --card-time: #6e6e73;
     --date-txt: #6e6e73;
-    --nav-arrow: #e5e5ee
+    --nav-arrow: #e5e5ee;
+    --primary-font: 'Source Sans Pro', sans-serif;
 }
 
 @media (prefers-color-scheme:dark) {
@@ -40,6 +41,7 @@
         --card-title: #cfcfda;
         --card-time: #6e6e73;
         --date-txt: #6e6e73;
-        --nav-arrow: #e5e5ee
+        --nav-arrow: #e5e5ee;
+        --primary-font: 'Source Sans Pro', sans-serif;
     }
 }
