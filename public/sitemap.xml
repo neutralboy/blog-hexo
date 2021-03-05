@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://poorna.dev/2021/03/04/Deploying-Ghost-CMS-on-AWS-Lightsail/</loc>
+    
+    <lastmod>2021-03-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://poorna.dev/2021/02/21/AWS-Lightsail-Wordpress-for-Absolute-Beginners/</loc>
     
     <lastmod>2021-02-21</lastmod>
@@ -53,7 +60,7 @@
 
   <url>
     <loc>https://poorna.dev/</loc>
-    <lastmod>2021-02-28</lastmod>
+    <lastmod>2021-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +68,7 @@
   
   <url>
     <loc>https://poorna.dev/tags/Cloudfront-AWS-Next-js-CMS-Devops-Cloud-Deployment/</loc>
-    <lastmod>2021-02-28</lastmod>
+    <lastmod>2021-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
