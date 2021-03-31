@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Poornachandra">
+  <meta name="description" content="A simple and clean blog." >
+  <link rel="icon" href="https://res.cloudinary.com/poorna/image/upload/c_scale,h_16/v1613500467/my-blog/Screenshot_2021-02-17_Poorna_s_Blog.png" type="image/ico" sizes="16x16"> 
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.poorna.dev/" />
+  <meta property="og:image" content="https://res.cloudinary.com/poorna/image/upload/q_auto:eco/v1613499906/my-blog/Screenshot_2021-02-16_Poorna_2.png" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  
+  
+  
+  
+    <meta property="og:title" content="Best way to run a Minecraft Server on AWSPoorna." />
+  
+  <title>Best way to run a Minecraft Server on AWS - Poorna.</title>
+  
+    <link rel="shortcut icon" href="https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_100/v1614522410/my-blog/logo/logo_wide.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+
+  
+<link rel="stylesheet" href="/css/lightbox.css">
+
+
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  
+  
+  
+    <meta name="og:image" content="https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto:best,w_100/v1614521517/my-blog/logo/logo.png">
+  
+
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+    <body>
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Poorna.</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/about/">About</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            
+            
+            <span>March</span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <span>12,</span>
+            <span>2021</span>
+        </div>
+        
+
+        <h2 class="title">Best way to run a Minecraft Server on AWS</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <blockquote>
+<p>Minecraft Servers are difficult to deploy and manage on any public cloud service. Self deploying your own server with access management such as Spigot or Bukkit is hard. The documentation for deployment and customization is often incomplete or inadequate. Here’s a tutorial that will run through all the steps to deploy a MC Server with Docker!</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://wilfredproject.org/">Wilfred project</a> is an <a target="_blank" rel="noopener" href="https://github.com/wilfred-dev/wilfred">open-sourced</a> CLI tool to manage game servers on the cloud, and its revolutionary! The pain of deploying and figuring out all the moving parts reduced thanks to Project Wilfred.</p>
+<h1 id="Step-1-Spin-up-an-EC2-instance-and-connect-to-it"><a href="#Step-1-Spin-up-an-EC2-instance-and-connect-to-it" class="headerlink" title="Step 1: Spin up an EC2 instance and connect to it"></a>Step 1: Spin up an EC2 instance and connect to it</h1><p>Spin up the t2.micro instance with <a target="_blank" rel="noopener" href="https://aws.amazon.com/amazon-linux-2/"><strong>Amazon Linux 2</strong></a> on AWS. The advantage that Amazon-Linux offers is that its super secure, maintained by AWS (used in their infrastructure) and super light weight. Its best suited for running docker.</p>
+<p><strong>Keep Port 25565 open for TCP and UDP</strong></p>
+<h1 id="Step-2-Install-Docker-and-Docker-Compose-on-the-EC2-instance"><a href="#Step-2-Install-Docker-and-Docker-Compose-on-the-EC2-instance" class="headerlink" title="Step 2: Install Docker and Docker Compose on the EC2 instance"></a>Step 2: Install Docker and Docker Compose on the EC2 instance</h1><p>Here’s how you do it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo amazon-linux-extras install docker</span><br><span class="line">sudo service docker start</span><br><span class="line">sudo usermod -a -G docker ec2-user</span><br><span class="line"></span><br><span class="line"># Make sure docker starts on system start</span><br><span class="line">sudo chkconfig docker on</span><br></pre></td></tr></table></figure>
+<p>Now install docker-compose:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Download the binary - auto downloads the latest version</span><br><span class="line">sudo curl -L https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;latest&#x2F;download&#x2F;docker-compose-$(uname -s)-$(uname -m) -o &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line"></span><br><span class="line"># Add permissions</span><br><span class="line">sudo chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line"></span><br><span class="line"># Verify installation</span><br><span class="line">docker-compose version</span><br></pre></td></tr></table></figure>
+<p>Now logout of your console and restart a new console session. This should restart all necessary permissions</p>
+<h1 id="Step-3-Install-Wilfred"><a href="#Step-3-Install-Wilfred" class="headerlink" title="Step 3: Install Wilfred"></a>Step 3: Install Wilfred</h1><p>Wilfred is used to manage the dockerized Minecraft server.</p>
+<blockquote>
+<p>pip does not come pre-installed on Amazon Linux 2</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Installing pip</span><br><span class="line">sudo yum -y install python-pip</span><br><span class="line"></span><br><span class="line"># Install wilfred</span><br><span class="line">pip install wilfred --upgrade</span><br><span class="line"></span><br><span class="line"># Check that its installed</span><br><span class="line">wilfred --version</span><br><span class="line"></span><br><span class="line"># Configure Wilfred</span><br><span class="line">wilfred setup</span><br></pre></td></tr></table></figure>
+<h1 id="Step-4-Install-and-Configure-Minecraft-Server"><a href="#Step-4-Install-and-Configure-Minecraft-Server" class="headerlink" title="Step 4: Install and Configure Minecraft Server"></a>Step 4: Install and Configure Minecraft Server</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wilfred create</span><br><span class="line"></span><br><span class="line">&gt; Server name: minecraft</span><br><span class="line">&gt; Image UID: minecraft-vanilla</span><br><span class="line">&gt; Port: 25565</span><br><span class="line">&gt; Memory: 1024</span><br><span class="line">&gt; Minecraft version: Latest</span><br></pre></td></tr></table></figure>
+<p><img src="https://res.cloudinary.com/poorna/image/upload/v1617205281/my-blog/mc-server/Screenshot_from_2021-03-31_21-10-10.png" alt="Configure"></p>
+<h1 id="Step-5-Connect-to-Minecraft-Server-in-the-game"><a href="#Step-5-Connect-to-Minecraft-Server-in-the-game" class="headerlink" title="Step 5: Connect to Minecraft Server in the game"></a>Step 5: Connect to Minecraft Server in the game</h1><p>Use the <em>IP Address</em> of the EC2 Instance with Port 25565 in your Minecraft client.<br><img src="https://res.cloudinary.com/poorna/image/upload/v1617206478/my-blog/mc-server/Screenshot_from_2021-03-31_21-30-42.png" alt="Direct Connect"></p>
+<p><img src="https://media.giphy.com/media/Sk5uipPXyBjfW/source.gif" alt="Celebrate"></p>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by Poornachandra, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
+
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h3 class="title">Site</h3>
+                
+                <a rel="noopener" href="/" class="item" target="_blank">Blog</a>
+                
+                <a rel="noopener" href="/about/" class="item" target="_blank">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h3 class="title">Me</h3>
+                
+                <a rel="noopener" href="https://github.com/neutralboy" class="item" target="_blank">GitHub</a>
+                
+                <a rel="noopener" href="mailto:contact@poorna.dev" class="item" target="_blank">Email</a>
+                
+            </div>
+            
+        </div>
+        &copy; 2021 Poornachandra<br />
+        Powered by <a rel="noopener" href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
+
+        
+<script src="/js/main.js"></script>
+
+        
+    </body>
+</html>

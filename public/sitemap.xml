@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://poorna.dev/2021/03/12/Best-way-to-run-a-Minecraft-Server/</loc>
+    
+    <lastmod>2021-03-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://poorna.dev/2021/03/04/Deploying-Ghost-CMS-on-AWS-Lightsail/</loc>
     
-    <lastmod>2021-03-04</lastmod>
+    <lastmod>2021-03-07</lastmod>
     
   </url>
   
@@ -60,7 +67,7 @@
 
   <url>
     <loc>https://poorna.dev/</loc>
-    <lastmod>2021-03-05</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,7 +75,7 @@
   
   <url>
     <loc>https://poorna.dev/tags/Cloudfront-AWS-Next-js-CMS-Devops-Cloud-Deployment/</loc>
-    <lastmod>2021-03-05</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
