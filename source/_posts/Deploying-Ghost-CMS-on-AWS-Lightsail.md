@@ -2,7 +2,7 @@
 title: Deploying Ghost CMS on AWS Lightsail
 level: Intermediate
 date: 2021-03-04 23:22:50
-kwywords: Ghost, Headless CMS, AWS, AWS Lightsail, Docker, Containerization
+keywords: Ghost, Headless CMS, AWS, AWS Lightsail, Docker, Containerization
 image: https://res.cloudinary.com/poorna/image/upload/v1614882067/my-blog/ghost-on-lightsail-container/Screenshot_2021-03-04_Create_a_container_service_Lightsail_4.png
 ---
 
