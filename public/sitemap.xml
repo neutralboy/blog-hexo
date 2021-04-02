@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://poorna.dev/2021/04/01/Why-you-should-use-AWS-Elastic-IPs/</loc>
+    
+    <lastmod>2021-04-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://poorna.dev/2021/03/12/Best-way-to-run-a-Minecraft-Server/</loc>
     
     <lastmod>2021-03-31</lastmod>
@@ -67,7 +74,7 @@
 
   <url>
     <loc>https://poorna.dev/</loc>
-    <lastmod>2021-03-31</lastmod>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,7 +82,14 @@
   
   <url>
     <loc>https://poorna.dev/tags/Cloudfront-AWS-Next-js-CMS-Devops-Cloud-Deployment/</loc>
-    <lastmod>2021-03-31</lastmod>
+    <lastmod>2021-04-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://poorna.dev/tags/AWS-Elastic-IPs-DevOps-EC2/</loc>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
