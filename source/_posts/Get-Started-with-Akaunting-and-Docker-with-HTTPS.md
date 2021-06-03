@@ -1,5 +1,5 @@
 ---
-title: Get started with Akaunting and Docker
+title: Get started with Akaunting and Docker with HTTPS
 level: Medium
 date: 2021-06-03 18:50:19
 kwywords: docker, akaunting, finances
