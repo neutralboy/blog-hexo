@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Poornachandra">
+  <meta name="description" content="A simple and clean blog." >
+  <link rel="icon" href="https://res.cloudinary.com/poorna/image/upload/c_scale,h_16/v1613500467/my-blog/Screenshot_2021-02-17_Poorna_s_Blog.png" type="image/ico" sizes="16x16"> 
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.poorna.dev/" />
+  <meta property="og:image" content="https://res.cloudinary.com/poorna/image/upload/q_auto:eco/v1613499906/my-blog/Screenshot_2021-02-16_Poorna_2.png" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  
+  
+  
+  
+    <meta property="og:title" content="Get started with Akaunting and Docker with HTTPSPoorna." />
+  
+  <title>Get started with Akaunting and Docker with HTTPS - Poorna.</title>
+  
+    <link rel="shortcut icon" href="https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_100/v1614522410/my-blog/logo/logo_wide.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+
+  
+<link rel="stylesheet" href="/css/lightbox.css">
+
+
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  
+      <meta name="description" content="Get started with akaunting and docker to manage your work and finances.">
+      <meta property="og:description" content="Get started with akaunting and docker to manage your work and finances." />
+  
+  
+  
+    <meta name="og:image" content=" https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_1300/v1622727459/my-blog/Screenshot_2021-06-03_at_19-05-03_Dashboard_-_Accel_Samurai.png ">
+  
+
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+    <body>
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Poorna.</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/about/">About</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            
+            
+            
+            
+            
+            <span>June</span>
+            
+            
+            
+            
+            
+            
+            
+            <span>3,</span>
+            <span>2021</span>
+        </div>
+        
+
+        <h2 class="title">Get started with Akaunting and Docker with HTTPS</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <blockquote>
+<p><strong>What is Akaunting?</strong><br>    <a target="_blank" rel="noopener" href="https://akaunting.com/">Akaunting</a> is an open-source accounting software. They offer self hosted and managed platform to manage all your finances.</p>
+</blockquote>
+<p>Here’s a preview of accounting:<br><img src="https://res.cloudinary.com/poorna/image/upload/c_scale,q_auto,w_1300/v1622727459/my-blog/Screenshot_2021-06-03_at_19-05-03_Dashboard_-_Accel_Samurai.png" alt="Perview of Akaunting"></p>
+<h3 id="Lets-assume-you-have-setup-a-machine-with-docker-and-docker-compose"><a href="#Lets-assume-you-have-setup-a-machine-with-docker-and-docker-compose" class="headerlink" title="Lets assume you have setup a machine with docker and docker-compose."></a>Lets assume you have setup a machine with docker and docker-compose.</h3><p>Follow through on the commands below and your own self hosted finance at the end of it.<br>Though Akauntings docker docs are comprehensive, they dont have a documentation on making it secure</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;akaunting&#x2F;docker</span><br><span class="line">cd docker</span><br><span class="line">cp env&#x2F;db.env.example env&#x2F;db.env</span><br><span class="line">cp env&#x2F;run.env.example env&#x2F;run.env</span><br></pre></td></tr></table></figure>
+<h3 id="Now-open-the-env-run-env-file-and-set-the-parameters-right"><a href="#Now-open-the-env-run-env-file-and-set-the-parameters-right" class="headerlink" title="Now open the env/run.env file and set the parameters right."></a>Now open the env/run.env file and set the parameters right.</h3><p>Here’s how the file should look:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># You should change this to match your reverse proxy DNS name and protocol</span><br><span class="line">APP_URL&#x3D;https:&#x2F;&#x2F;&lt;your-domain.com&gt; # No need of a trailing slash</span><br><span class="line">LOCALE&#x3D;en-US</span><br><span class="line"></span><br><span class="line"># Don&#39;t change this unless you rename your database container or use rootless podman, in case of using rootless podman you should set it to 127.0.0.1 (NOT localhost)</span><br><span class="line">DB_HOST&#x3D;akaunting-db</span><br><span class="line"></span><br><span class="line"># Change these to match env&#x2F;db.env</span><br><span class="line">DB_DATABASE&#x3D;akaunting</span><br><span class="line">DB_USERNAME&#x3D;admin</span><br><span class="line">DB_PASSWORD&#x3D;akaunting_password</span><br><span class="line"></span><br><span class="line"># You should change this to a random string of three numbers or letters followed by an underscore</span><br><span class="line">DB_PREFIX&#x3D;asd_</span><br><span class="line"></span><br><span class="line"># These define the first company to exist on this instance. They are only used during setup.</span><br><span class="line">COMPANY_NAME&#x3D;&lt;Your company name&gt;</span><br><span class="line">COMPANY_EMAIL&#x3D;&lt;Your company email&gt;</span><br><span class="line"></span><br><span class="line"># This will be the first administrative user created on setup.</span><br><span class="line">ADMIN_EMAIL&#x3D;&lt;Admin email&gt;</span><br><span class="line">ADMIN_PASSWORD&#x3D;&lt;Admin password&gt;</span><br></pre></td></tr></table></figure>
+<p>Save and close the file.</p>
+<h3 id="Make-changes-to-docker-compose-yml"><a href="#Make-changes-to-docker-compose-yml" class="headerlink" title="Make changes to docker-compose.yml"></a>Make changes to docker-compose.yml</h3><p>Edit the existing <code>docker-compose.yml</code> to add the caddy service to it.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://caddyserver.com/">Caddy</a> is a highly performant reverse proxy server written in GoLang. Caddy takes care of reverse proxy and adding a wild card certificate to the domain.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">version: &#39;3.7&#39;</span><br><span class="line">services:</span><br><span class="line">  akaunting:</span><br><span class="line">    container_name: akaunting</span><br><span class="line">    image: docker.io&#x2F;akaunting&#x2F;akaunting:latest</span><br><span class="line">    build:</span><br><span class="line">      context: .</span><br><span class="line">    ports:</span><br><span class="line">      - 8080:80</span><br><span class="line">    volumes:</span><br><span class="line">      - akaunting-data:&#x2F;var&#x2F;www&#x2F;html&#x2F;storage</span><br><span class="line">      - akaunting-modules:&#x2F;var&#x2F;www&#x2F;html&#x2F;modules</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    env_file:</span><br><span class="line">      - env&#x2F;run.env</span><br><span class="line">    environment:</span><br><span class="line">      - AKAUNTING_SETUP</span><br><span class="line">    depends_on:</span><br><span class="line">      - akaunting-db</span><br><span class="line">    networks:</span><br><span class="line">      - app-network</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">  akaunting-db:</span><br><span class="line">    container_name: akaunting-db</span><br><span class="line">    image: mariadb</span><br><span class="line">    volumes:</span><br><span class="line">      - akaunting-db:&#x2F;var&#x2F;lib&#x2F;mysql</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    env_file:</span><br><span class="line">      - env&#x2F;db.env</span><br><span class="line">    networks:</span><br><span class="line">      - app-network</span><br><span class="line"></span><br><span class="line">  akaunting-update:</span><br><span class="line">    image: containrrr&#x2F;watchtower</span><br><span class="line">    volumes:</span><br><span class="line">      - &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock</span><br><span class="line">    command: --cleanup akaunting akaunting-db</span><br><span class="line"></span><br><span class="line">  caddy:</span><br><span class="line">    image: caddy:2.3.0-alpine</span><br><span class="line">    container_name: caddy</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;80:80&quot;</span><br><span class="line">      - &quot;443:443&quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - .&#x2F;Caddyfile:&#x2F;etc&#x2F;caddy&#x2F;Caddyfile</span><br><span class="line">    networks:</span><br><span class="line">      - app-network</span><br><span class="line">    depends_on: </span><br><span class="line">      - akaunting</span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line">  akaunting-data:</span><br><span class="line">  akaunting-modules:</span><br><span class="line">  akaunting-db:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">    app-network:</span><br><span class="line">      driver: bridge</span><br></pre></td></tr></table></figure>
+<h3 id="Add-the-Caddyfile-in-the-same-location-as-docker-compose-yml"><a href="#Add-the-Caddyfile-in-the-same-location-as-docker-compose-yml" class="headerlink" title="Add the Caddyfile in the same location as docker-compose.yml"></a>Add the Caddyfile in the same location as docker-compose.yml</h3><p>Create a file called Caddyfile (no file extension name!) and add the following into it.</p>
+<blockquote>
+<p>Caddyfile is how Caddy takes in configuration akin to the ngnix/sites-enabled files</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;your-domain.com&gt; &#123;</span><br><span class="line">    encode gzip</span><br><span class="line">    reverse_proxy akaunting:80</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Save and exit the file.</p>
+<h3 id="Start-the-setup"><a href="#Start-the-setup" class="headerlink" title="Start the setup"></a>Start the setup</h3><p>Now execute the following commands:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AKAUNTING_SETUP&#x3D;true docker-compose up -d</span><br></pre></td></tr></table></figure>
+<p>In your browser open up &lt;your-domain.com&gt; and finish the Akaunting setup </p>
+<blockquote>
+<h4 id="Akaunting-API-key-isnt-necessary-to-complete-the-install-you-can-skip-the-step"><a href="#Akaunting-API-key-isnt-necessary-to-complete-the-install-you-can-skip-the-step" class="headerlink" title="Akaunting API key isnt necessary to complete the install, you can skip the step"></a>Akaunting API key isnt necessary to complete the install, you can skip the step</h4></blockquote>
+<h3 id="Once-setup-is-completed"><a href="#Once-setup-is-completed" class="headerlink" title="Once setup is completed"></a>Once setup is completed</h3><p>Start the container again without the env variable that is required for setup.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker-compose down -v</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<h3 id="Sweet-Perk-Auto-updating-your-Akaunting-installation"><a href="#Sweet-Perk-Auto-updating-your-Akaunting-installation" class="headerlink" title="Sweet Perk: Auto-updating your Akaunting installation"></a>Sweet Perk: Auto-updating your Akaunting installation</h3><p>Included in the docker-compose.yml file is a container called watchtower which takes care of the auto updating</p>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by Poornachandra, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
+
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h3 class="title">Site</h3>
+                
+                <a rel="noopener" href="/" class="item" target="_blank">Blog</a>
+                
+                <a rel="noopener" href="/about/" class="item" target="_blank">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h3 class="title">Me</h3>
+                
+                <a rel="noopener" href="https://github.com/neutralboy" class="item" target="_blank">GitHub</a>
+                
+                <a rel="noopener" href="mailto:contact@poorna.dev" class="item" target="_blank">Email</a>
+                
+            </div>
+            
+        </div>
+        &copy; 2021 Poornachandra<br />
+        Powered by <a rel="noopener" href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
+
+        
+<script src="/js/main.js"></script>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XG0SE1WP30"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XG0SE1WP30');
+    </script>
+
+    </body>
+</html>

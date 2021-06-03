@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://poorna.dev/2021/06/03/Get-Started-with-Akaunting-and-Docker-with-HTTPS/</loc>
+    
+    <lastmod>2021-06-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://poorna.dev/2021/04/02/Best-VSCode-Plugins-for-Web-Docker-development-in-2021/</loc>
     
     <lastmod>2021-04-03</lastmod>
@@ -81,7 +88,7 @@
 
   <url>
     <loc>https://poorna.dev/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-06-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,21 +96,21 @@
   
   <url>
     <loc>https://poorna.dev/tags/Cloudfront-AWS-Next-js-CMS-Devops-Cloud-Deployment/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-06-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://poorna.dev/tags/AWS-Elastic-IPs-DevOps-EC2/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-06-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://poorna.dev/tags/VScode-VSCode-Plugin-Docker-Develpment/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-06-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
