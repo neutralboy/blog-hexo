@@ -36,7 +36,7 @@ export default function Home({ posts }: IHome) {
       <div className="lg:p-20 p-6">
         <h3 className="text-white lg:text-5xl text-2xl">Latest Posts</h3>
 
-        <div className="lg:grid lg:grid-flow-rows lg:grid-cols-3 lg:auto-rows-max lg:mt-10 mt-4 space-y-4">
+        <div className="lg:grid lg:grid-flow-rows lg:grid-cols-3 lg:auto-rows-max lg:mt-10 mt-4 lg:space-y-0 space-y-4">
 
       {
         posts.map(e => 
