@@ -28,8 +28,8 @@ const Post = ({ post }: IPost) => {
 
             <Link href="/">
                 <a className="inline-flex overflow-hidden text-white bg-gray-900 z-50 sticky bottom-0">
-                    <span className="pl-4 pr-5 py-2.5 text-black bg-white">Go Back</span>
-                    <span className="px-3.5 py-2 text-white bg-indigo-500 group-hover:bg-indigo-600 flex items-center justify-center">
+                    <span className="pl-4 pr-5 py-2.5 text-black bg-white hover:bg-gray-300">Go Back</span>
+                    <span className="px-3.5 py-2 text-white bg-indigo-500 hover:bg-indigo-600 flex items-center justify-center">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"

@@ -42,7 +42,7 @@ export default function Home({ posts }: IHome) {
         posts.map(e => 
             <div key={Math.random()}>
               <a href={`/post/${e.slug}`}>
-              <div  className="lg:mx-6 mt-1 lg:mb-8 lg:p-6 p-3 bg-gray-800 rounded-lg border-solid border-indigo-600 border-b-4 shadow-xl">
+              <div  className="lg:mx-6 mt-1 lg:mb-8 lg:p-6 p-3 bg-gray-800 rounded-lg border-solid border-indigo-600 border-b-4 shadow-xl hover:border-indigo-700">
                 <div className="lg:flex lg:justify-between">
                   <div>
                     <h4 className="text-white font-display lg:text-3xl text-2xl">{e.title}</h4>
