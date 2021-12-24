@@ -13,14 +13,14 @@ module.exports = {
           css: {
             strong: { color: "white" },
             blockquote: { color: "white" },
-            h1: { color: "white" },
-            h3: { color: "white" },
-            h2: { color: "white" },
-            h4: { color: "white" },
-            h5: { color: "white" },
-            h6: { color: "white" },
+            h1: { color: "white", fontFamily: "Roboto" },
+            h3: { color: "#cacaca", fontFamily: "Roboto" },
+            h2: { color: "white", fontFamily: "Roboto" },
+            h4: { color: "white", fontFamily: "Roboto" },
+            h5: { color: "white", fontFamily: "Roboto" },
+            h6: { color: "white", fontFamily: "Roboto" },
             pre: { fontFamily: 'IBM Plex Mono' },
-            code: { fontFamily: 'IBM Plex Mono', color: "white" }
+            code: { fontFamily: 'IBM Plex Mono', color: "white" },
           }
         }
       }

@@ -94,7 +94,7 @@ This should spin up a server at `http://localhost:4000/`. Open it in the browser
 # Step 5: Add some content
 Open the `hello-world.md`
 Replace the contents to the following
-```
+```markdown
 ---
 title: Hello World
 ---

@@ -26,7 +26,7 @@ cp env/run.env.example env/run.env
 ### Now open the env/run.env file and set the parameters right.
 Here's how the file should look:
 
-```
+```env
 # You should change this to match your reverse proxy DNS name and protocol
 APP_URL=https://<your-domain.com> # No need of a trailing slash
 LOCALE=en-US
@@ -55,7 +55,7 @@ Save and close the file.
 ### Make changes to docker-compose.yml
 Edit the existing `docker-compose.yml` to add the caddy service to it.
 > [Caddy](https://caddyserver.com/) is a highly performant reverse proxy server written in GoLang. Caddy takes care of reverse proxy and adding a wild card certificate to the domain.
-```
+```yaml
 version: '3.7'
 services:
   akaunting:
@@ -124,7 +124,7 @@ networks:
 ### Add the Caddyfile in the same location as docker-compose.yml
 Create a file called Caddyfile (no file extension name!) and add the following into it.
 > Caddyfile is how Caddy takes in configuration akin to the ngnix/sites-enabled files
-```
+```caddy
 <your-domain.com> {
     encode gzip
     reverse_proxy akaunting:80
@@ -144,7 +144,7 @@ In your browser open up <your-domain.com> and finish the Akaunting setup
 
 ### Once setup is completed
 Start the container again without the env variable that is required for setup.
-```
+```bash
 docker-compose down -v
 docker-compose up -d
 ```

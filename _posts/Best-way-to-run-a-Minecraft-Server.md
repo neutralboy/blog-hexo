@@ -19,7 +19,7 @@ Spin up the t2.micro instance with [**Amazon Linux 2**](https://aws.amazon.com/a
 
 # Step 2: Install Docker and Docker Compose on the EC2 instance
 Here's how you do it.
-```
+```bash
 sudo amazon-linux-extras install docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
@@ -29,7 +29,7 @@ sudo chkconfig docker on
 ```
 
 Now install docker-compose:
-```
+```bash
 # Download the binary - auto downloads the latest version
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 
@@ -45,7 +45,7 @@ Now logout of your console and restart a new console session. This should restar
 Wilfred is used to manage the dockerized Minecraft server.
 > pip does not come pre-installed on Amazon Linux 2
 
-```
+```bash
 # Installing pip
 sudo yum -y install python-pip
 
@@ -61,7 +61,7 @@ wilfred setup
 
 # Step 4: Install and Configure Minecraft Server
 
-```
+```bash
 wilfred create
 
 > Server name: minecraft

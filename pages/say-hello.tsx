@@ -5,17 +5,14 @@ const SayHello = () => (
         <SEOComponent title="Say Hello" description="Reach out to me" article={false} />
         <div style={{backgroundColor:"#111827",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}} className="lg:p-20 p-6">
             <h1 className="lg:text-7xl text-5xl text-white font-display">Hi, I'm <span className="text-blue-400">Poornachandra</span>.</h1>
-            <h2 className="text-2xl text-gray-200 mt-3"> Medical Student, Data Analyst, Cloud Consultant </h2>
+            <h2 className="text-2xl text-gray-200 mt-3"> Currently a medical student based out of Bangalore, IN </h2>
         </div>
-        <div className="bg-gray-800 lg:p-16 p-10 text-xl w-full">
+        <div className="bg-gray-800 lg:container px-6 py-10 text-xl w-full">
             <div>
                 <p className="text-gray-100">
-                    I'm a medical student who enjoys programming and learning the latest tech. I have experience in tech from Wordpress - NGINX to Elasticsearch. Kibana & Logstash. All of my code is on GitHub and hosted on AWS.     
+                    I'm a tech + healthcare enthusiast working on things all range from making healthcare more personal to platform solutions for events. I love catching up on the latest trends in healthcare, crypto and web dev. All my fun little side projects can be found on my github. This blog is for things I have needed help on or found interesting over time and so includes everything under the sun.
                 </p>
-                <p className="text-gray-100 mt-3">
-                    You can find all('most) of my work on LinkedIn.
-                 </p>
-                 <h3 className="text-2xl mt-4 text-white">If you have anything interesting I can work on you can reach out to me at </h3>
+                 <h3 className="text-xl mt-4 text-white">If you have anything interesting I can work on you can reach out to me at </h3>
                  <div className="flex flex-row mt-6 space-x-3"> 
                     <a rel="noopener" href="https://www.linkedin.com/in/poornachandra-v/" className="flex bg-blue-600 p-3 rounded text-white space-x-3 hover:bg-blue-500">
                         <svg className="fill-current text-white block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

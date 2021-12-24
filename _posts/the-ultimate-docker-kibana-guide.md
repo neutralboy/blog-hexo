@@ -13,7 +13,7 @@ Here's a ridiculously simple guide to getting kibana on docker
 ## Docker Compose configuration to enable kibana:
 This configuration can be used without a seperate kibana configuration file
 `docker-compose.yml`
-```
+```yaml
 ...
   kibana:
     image: docker.elastic.co/kibana/kibana:7.13.0
@@ -34,7 +34,7 @@ Now kibana must be accessible at [http://localhost:5601/](http://localhost:5601/
 ## Adding `kibana.yml` for advanced configuration
 
 1. Remove environemnt configuration and add kibana.yml volume support in `docker-compose.yml`
-```
+```yaml
 ...
   kibana:
     image: docker.elastic.co/kibana/kibana:7.13.0

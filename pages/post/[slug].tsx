@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { postType, getAllPosts, getPostBySlug } from "../../lib/api";
@@ -6,15 +7,44 @@ import SEO from "../../components/SEO";
 
 interface IPost{
     post: postType
-}
+};
+
+const renderStructredData = (post: postType) => {
+    return JSON.stringify({
+        "@context": "http://schema.org/",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://www.poorna.dev/post/${post.slug}`
+        },
+        "headline": post.title,
+        "description": post.description,
+        "image": "https://res.cloudinary.com/poorna/image/upload/v1622971116/my-blog/logo/Screenshot_2021-06-06_at_14-45-29_Screenshot.png",
+        "author": {
+            "@type": "",
+            "name": "Poornachandra V"
+        },
+        "datePublished": post.date
+    })
+};
 
 const Post = ({ post }: IPost) => {
     return(
         <>
+            <Head>
+                <script type="application/ld+json" >
+                    {renderStructredData(post)}
+                </script>
+            </Head>
             <SEO {...post} article url={`post/${post.slug}`} keywords={post.tags} />
-            <div className="lg:m-16 m-6">
+            <div className="lg:m-16 m-6 flex flex-col-reverse lg:flex-row lg:justify-between">
                 <div className="mx-auto lg:p-10 p-4">
                     <h1 className="lg:text-6xl text-4xl text-white font-display ">{post.title}</h1>
+                </div>
+                <div className="inline-block my-auto" >
+                    <div className="inline-block text-md lg:text-xl bg-indigo-500 text-gray-200 p-2 rounded-sm" >
+                        {post.level}
+                    </div>
                 </div>
             </div>
             <div className="flex">
@@ -22,9 +52,12 @@ const Post = ({ post }: IPost) => {
                 <div className="h-3 bg-white w-7" />
             </div>
 
-            <div className="lg:p-16 lg:px-56 p-8">
-                <div className="prose prose-blue prose max-w-none text-white" dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div className="lg:flex lg:justify-center" >
+                <div className="lg:container p-8">
+                    <div className="prose prose-md prose-indigo max-w-none text-white" dangerouslySetInnerHTML={{ __html: post.content }} />
+                </div>
             </div>
+
 
             <Link href="/">
                 <a className="inline-flex overflow-hidden text-white bg-gray-900 z-50 sticky bottom-0">
@@ -82,7 +115,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         }
     }
 
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = getAllPosts(['slug']);
@@ -93,6 +126,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
             }
         }), fallback: false
     }
-}
+};
 
 export default Post;

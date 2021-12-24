@@ -13,7 +13,7 @@ level: Easy
 Since cloudflare launched the WARP service for mobile on 11/11 called 1.1.1.1 . Linux users were waiting for a version of the client for Linux even as they released a version for Windows and MacOS. Even though the Linux client does not have a GUI there are a few open source alternatives you can use.
 
 ## Installing the CLI
-```
+```sh
 # If you're on Ubuntu
 sudo apt install cloudflare-warp
 # If youre on CentOS
@@ -21,7 +21,7 @@ sudo yum install cloudflare-warp
 ```
 
 ## Making the connection: CLI way
-```
+```sh
 # Register the client first
 warp-cli register # Agree to the privacy document
 
@@ -41,7 +41,7 @@ There is an open-source python file that renders WARP as a GUI on linux.
 The repos is located here: [https://github.com/mrmoein/warp-cloudflare-gui](https://github.com/mrmoein/warp-cloudflare-gui)
 
 Here are simple instructions:
-```
+```sh
 git clone https://github.com/mrmoein/warp-cloudflare-gui
 cd warp-cloudflare-gui
 # Install the program
@@ -58,7 +58,7 @@ It has two available modes:
 2. WARP+DOH - WARP mode and DNS over HTTPS
 
 Changing modes:
-```
+```sh
 # Switch to DOH Mode
 warp-cli set-mode doh
 
