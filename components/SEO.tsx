@@ -15,7 +15,7 @@ const SEO = ({ title, image, description, keywords, url, article, date }: ISEO) 
         <>
             <Head>
                 <title>{title} | Poorna's Blog</title>
-                <meta property="description" content={description} />
+                <meta name="description" content={description} />
                 <meta property="og:title" content={`${title} | Poorna's Blog`} />
                 <meta property="og:type" content="blog" />
                 <meta property="og:url" content={`https://www.poorna.dev/${url || ""}`} />

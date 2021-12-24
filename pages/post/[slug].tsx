@@ -21,8 +21,9 @@ const renderStructredData = (post: postType) => {
         "description": post.description,
         "image": "https://res.cloudinary.com/poorna/image/upload/v1622971116/my-blog/logo/Screenshot_2021-06-06_at_14-45-29_Screenshot.png",
         "author": {
-            "@type": "",
-            "name": "Poornachandra V"
+            "@type": "Person",
+            "name": "Poornachandra V",
+            "url": "https://www.poorna.dev/say-hello"
         },
         "datePublished": post.date
     })
@@ -42,7 +43,7 @@ const Post = ({ post }: IPost) => {
                     <h1 className="lg:text-6xl text-4xl text-white font-display ">{post.title}</h1>
                 </div>
                 <div className="inline-block my-auto" >
-                    <div className="inline-block text-md lg:text-xl bg-indigo-500 text-gray-200 p-2 rounded-sm" >
+                    <div className="inline-block text-md lg:text-xl bg-indigo-500 text-gray-100 p-2 rounded-sm" >
                         {post.level}
                     </div>
                 </div>
@@ -54,7 +55,7 @@ const Post = ({ post }: IPost) => {
 
             <div className="lg:flex lg:justify-center" >
                 <div className="lg:container p-8">
-                    <div className="prose prose-md prose-indigo max-w-none text-white" dangerouslySetInnerHTML={{ __html: post.content }} />
+                    <div className="prose prose-base prose-blue max-w-none text-white" dangerouslySetInnerHTML={{ __html: post.content }} />
                 </div>
             </div>
 
