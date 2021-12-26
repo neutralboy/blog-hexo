@@ -2,7 +2,7 @@
 layout: blog
 title: How medicine is being taught is changing. Disruptors are finally here
 date: 2021-12-18 21:40:49
-tags: Healthcare, Medical, Medical Student, Disruption
+tags: Healthcare, Medical, Medical Student, Disruption, Marrow, Prepladder, Whietarmy
 description: Healthcare education is undergoing a massive change right now. Players such as PrepLadder, Marrow and Whitearmy are here to stay for a reason.
 level: Opinion
 ---

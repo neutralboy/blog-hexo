@@ -73,11 +73,14 @@ export default function Home({ posts }: IHome) {
                   </div>
                 </div>
 
+                <div className="flex flex-col lg:flex-row justify-between" >
                 {
                     e.level && <div>
-                      <p className="bg-indigo-600 p-1 text-white rounded shadow-lg z-30 inline-block my-2 lg:mt-0">{e.level}</p>
+                      <p className="bg-indigo-600 p-1 text-white rounded shadow-md z-30 inline-block my-2 lg:mt-0">{e.level}</p>
                     </div>
                   }
+                </div>
+
 
                 <div>
                   <p className="text-gray-200">
