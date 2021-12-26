@@ -5,6 +5,7 @@ date: 2021-12-18 21:40:49
 tags: Healthcare, Medical, Medical Student, Disruption, Marrow, Prepladder, Whietarmy
 description: Healthcare education is undergoing a massive change right now. Players such as PrepLadder, Marrow and Whitearmy are here to stay for a reason.
 level: Opinion
+image: https://res.cloudinary.com/poorna/image/upload/v1640502387/my-blog/Screenshot_2021-12-26_at_12-35-35_The_White_Army.png
 ---
 
 ## Current state of affairs

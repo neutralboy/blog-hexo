@@ -37,7 +37,7 @@ const Post = ({ post }: IPost) => {
                     {renderStructredData(post)}
                 </script>
             </Head>
-            <SEO {...post} article url={`post/${post.slug}`} keywords={post.tags} />
+            <SEO {...post} article url={`post/${post.slug}`} keywords={post.tags} image={post.image} />
             <div className="lg:m-16 m-6 flex flex-col-reverse lg:flex-row lg:justify-between">
                 <div className="mx-auto lg:p-10 p-4">
                     <h1 className="lg:text-6xl text-4xl text-white font-display ">{post.title}</h1>
