@@ -38,7 +38,7 @@ const Post = ({ post }: IPost) => {
                 </script>
             </Head>
             <SEO {...post} article url={`post/${post.slug}`} keywords={post.tags} image={post.image} />
-            <div className="lg:m-16 m-6 flex flex-col-reverse lg:flex-row lg:justify-between">
+            <div className="mx-auto lg:my-16 md:container m-6 flex flex-col-reverse lg:flex-row lg:justify-between">
                 <div className="mx-auto lg:p-10 p-4">
                     <h1 className="lg:text-6xl text-4xl text-white font-display ">{post.title}</h1>
                 </div>
@@ -54,8 +54,8 @@ const Post = ({ post }: IPost) => {
             </div>
 
             <div className="lg:flex lg:justify-center" >
-                <div className="md:container p-8">
-                    <div className="prose prose-base prose-blue max-w-none text-white" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div className="md:container py-8 lg:flex lg:justify-center">
+                    <div className="prose prose-base prose-blue max-w-none text-white lg:p-0 px-4 lg:w-4/6 overflow-x-hidden" dangerouslySetInnerHTML={{ __html: post.content }} />
                 </div>
             </div>
 
