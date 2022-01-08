@@ -54,7 +54,7 @@ const Post = ({ post }: IPost) => {
             </div>
 
             <div className="lg:flex lg:justify-center" >
-                <div className="lg:container p-8">
+                <div className="md:container p-8">
                     <div className="prose prose-base prose-blue max-w-none text-white" dangerouslySetInnerHTML={{ __html: post.content }} />
                 </div>
             </div>

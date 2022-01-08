@@ -37,7 +37,7 @@ Tier-2 cities do not get the older and mature medical college teachers that metr
 These online only players advertised themselves as platforms with quality teachers teaching all concepts necessary to effectively. Initially skeptisicm was high and adoption was low, once a critical number was reached network effect took over and now everyone has it.
 
 ## The case for Whitearmy
-[Whitearmy](https://thewhitearmy.in/) - *Help others to help ourselves* started as a small whatsapp group where interested students posting clinical methods and case presentations - it slowly grew to include more students from all the country.
+[Whitearmy](https://thewhitearmy.in/) - *Help others to help ourselves* started as a small Whatsapp group where interested students posting clinical methods and case presentations - it slowly grew to include more students from all the country.
 ### Advantage Whitearmy
 Whitearmy has positioned itself as a key value provider in the healthcare education field as it was founded by and is still run by a group of medical graduates who are also clinicans. 
 
