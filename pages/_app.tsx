@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Header />
         <Component {...pageProps} />
         <div className="w-full bg-gray-800 py-3 lg:flex lg:justify-center mx-auto" >
-          <p className="text-gray-300 block mx-auto" >
+          <p className="text-gray-400 block text-sm text-center" >
             Poorna's blog 2020-PRESENT. All the opinions on this blog are opinions only. I have no sponsors and I am not affliated with any platforms or ventures.
           </p>
         </div>
