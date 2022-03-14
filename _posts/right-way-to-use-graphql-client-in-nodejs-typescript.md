@@ -1,9 +1,9 @@
 ---
 title: Right way to use GraphQL Client in NodeJS + Typescript
 date: 2022-03-14 22:22:38
-keywords:Typescript, GraphQL, NodeJs, Prisma Labs, yarn
+keywords: Typescript, GraphQL, NodeJs, Prisma Labs, yarn
 level: Easy
-description:  Using GraphQL Clients is particularly hard with NodeJS because of lack of window.fetch, but here's a simple fix to that
+description: Using GraphQL Clients is particularly hard with NodeJS because of lack of window.fetch, but here's a simple fix to that
 image: https://res.cloudinary.com/poorna/image/upload/v1647273959/my-blog/graphql%3Dnodejs.png
 ---
 
