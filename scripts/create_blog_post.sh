@@ -5,7 +5,7 @@ slugify () {
 }
 
 relative_location=./../_posts/
-filepath=$(cd "$(dirname "$relative_location")"; pwd)/poorna/$(basename "$relative_location")
+filepath=$(cd "$(dirname "$relative_location")"; pwd)/blog-hexo/$(basename "$relative_location")
 NOW=$(date +"%Y-%m-%d %H:%M:%S")
 file_name=$(slugify "$@")
 echo "Time: $NOW"
